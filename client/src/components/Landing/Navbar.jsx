@@ -19,6 +19,7 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import EngineeringIcon from '@mui/icons-material/Engineering';
 import About from "./About";
 import { dark } from "@mui/material/styles/createPalette";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
@@ -59,8 +60,11 @@ const Navbar = () => {
         <a href="#testimonal">Testimonials</a>
         <a href="#projects">Work</a>
         <a href="#contact">Contact</a>
-        <button className="primary-button" style={{marginRight:"25px"}}>Sign In</button>
-        <button className="primary-button">Sign Up</button>
+        <NavLink to="/login">
+
+        <button className="primary-button" style={{marginRight:"25px"}}>Get Started</button>
+        </NavLink>
+      
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} color="white"/>
