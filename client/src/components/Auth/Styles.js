@@ -2,7 +2,7 @@ import { makeStyles } from '@mui/styles';
 
 export default makeStyles(() => ({
   paper: {
-    marginTop: '100px',
+    marginTop: '50px',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
