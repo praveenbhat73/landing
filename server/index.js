@@ -1,8 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import userRouter from './routes/User.js'
 dotenv.config();
 const app=express();
 app.use(bodyParser.json({limit:"30mb",extended:true}));
@@ -21,6 +22,8 @@ app.use(cors());
 app.get("/",(req,res)=>{
     res.send("hello world")
 })
+// app.use(/)
+app.use("/user", userRouter);
 const PORT=process.env.PORT||9000;
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true,
