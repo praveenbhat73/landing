@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch } from 'react-redux';
 // import {useHistory} from 'react-router-dom'
 import {
@@ -23,6 +23,8 @@ import Loginan from "../Lottie/Loginan.js";
 import { signin, signup } from '../../state/actions.js';
 import { AUTH } from '../../constatnts/actiontypes.js';
 // import Navbar from '../Landing/Navbar.jsx'
+
+import axios from 'axios'
 const initialState = {
   Name: "",
   email: "",
@@ -40,6 +42,8 @@ const Login = () => {
   const [form, setForm] = useState(initialState);
   const [isSignup, setIsSignup] = useState(false);
   const classes = useStyles();
+
+  // const[signup,{isloading}]=useSignupUserQuery();
 
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
@@ -63,7 +67,7 @@ const Login = () => {
 
   };
 
-    console.log(form);
+
   return (
     <>
       {/* <Navbar/> */}
